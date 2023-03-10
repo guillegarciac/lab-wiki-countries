@@ -38,21 +38,15 @@ function App() {
           <p className="loading-text">Fetching countries...</p>
         </div>
         :
-        <Routes>
-          <Route 
-            path="/" 
-            element={
-              <CountriesList 
-                countries={countries}/>
-              }/>
-          <Route 
-            path="/countries/:countryId" 
-            element={
-              <CountryDetails 
-                countries={countries}/>
-            }/>
-          <Route path="*" element={<ErrorPage />}/>  
-        </Routes>
+        <div className="container">
+          <div className="row">
+            <Routes>
+              <Route path="/" element={<CountriesList countries={countries} />}>
+                <Route path="/:countryId" element={<CountryDetails countries={countries} />}/>
+              </Route>
+            </Routes>
+          </div>
+        </div>
       }
     </div>
   );

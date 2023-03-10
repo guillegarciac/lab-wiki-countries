@@ -36,15 +36,15 @@ function CountryDetails({ countries }) {
       </Row>
       <Row>
         <Col>
-          <ListGroup className='mt-5 mb-5'>
+          <ListGroup className='mt-5 mb-5 w-100'>
             {country.borders.length > 0 && 
               <ListGroup.Item>
                 <h5>Border Countries:</h5>
                 {country.borders.map(border => {
                   const borderCountry = countries.find(country => country.alpha3Code === border);
                   return (
-                    <NavLink key={borderCountry.alpha3Code} to={`/countries/${borderCountry.alpha3Code}`} className="mr-2">
-                      <Badge variant="secondary">{borderCountry.name.common}</Badge>
+                    <NavLink key={borderCountry.alpha3Code} to={`/${borderCountry.alpha3Code}`} className="mr-2">
+                      <Badge variant="primary">{borderCountry.name.common}</Badge>
                     </NavLink>
                   );
                 })}

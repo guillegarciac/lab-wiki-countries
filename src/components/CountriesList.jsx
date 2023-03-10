@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { TfiClose } from 'react-icons/tfi';
 import { IoIosArrowForward } from 'react-icons/io';
@@ -64,9 +64,10 @@ export default function CountriesList({ countries }) {
           </div>
         </div>
       </div>
+      <div className='list-two-containers'>
       <div className="list-group">
         {filteredCountries.map((country) => (
-          <Link className="country-link" to={`countries/${country.alpha3Code}`}>
+          <Link className="country-link" to={`/${country.alpha3Code}`}>
           <div className="list-group-item" key={country.alpha3Code}>
             <div className="country-item d-flex justify-content-between align-items-center">
               <div className="d-flex align-items-center">
@@ -82,6 +83,11 @@ export default function CountriesList({ countries }) {
           </Link>
         ))}
       </div>
+      <div className='list-detail'>
+        <Outlet />
+      </div>
+      </div>
+      
     </div>
   );
 }

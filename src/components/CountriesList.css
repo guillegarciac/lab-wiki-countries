@@ -39,3 +39,16 @@
   width: 95%;
   margin-left: 1rem;
 }
+
+.list-group {
+  width: 75%;
+}
+
+.list-detail {
+  width: 50%;
+}
+
+.list-two-containers {
+  display: flex;
+}
+
