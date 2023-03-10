@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import { NavLink } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Navbar() {
   return (
-    <header>
-      <h1>LAB - WikiCountries</h1>
-    </header>
-  )
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <NavLink className="navbar-brand" to="/">LAB - Wiki Countries</NavLink>
+    </nav>
+  );
 }
