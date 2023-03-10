@@ -31,3 +31,11 @@
   border: none;
   margin-top: 1rem;
 }
+
+.form-select {
+  background-color: transparent;
+  border: none;
+  margin-top: 1rem;
+  width: 95%;
+  margin-left: 1rem;
+}
