@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import countriesData from './countries.json'
 
 function App() {
   return (
