@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { TfiClose } from 'react-icons/tfi';
+import { IoIosArrowForward } from 'react-icons/io';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CountriesList.css';
 
@@ -19,7 +20,7 @@ export default function CountriesList({ countries }) {
       return region.includes(regionFilter.toLowerCase()) &&
         (name.includes(search) || region.includes(search));
     })
-    .sort((a, b) => (a.name.common > b.name.common ? 1 : -1)); // add this sort method to keep countries sorted A to Z
+    .sort((a, b) => (a.name.common > b.name.common ? 1 : -1));
 
   const clearSearch = () => {
     setSearchValue('');
@@ -65,15 +66,20 @@ export default function CountriesList({ countries }) {
       </div>
       <div className="list-group">
         {filteredCountries.map((country) => (
+          <Link className="country-link" to={`countries/${country.alpha3Code}`}>
           <div className="list-group-item" key={country.alpha3Code}>
-            <div className="country-item">
-              <img
-                src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}
-                alt={`${country.name.common}`}
-              />
-              <Link to={`countries/${country.alpha3Code}`}>{country.name.common}</Link>
+            <div className="country-item d-flex justify-content-between align-items-center">
+              <div className="d-flex align-items-center">
+                <img
+                  src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}
+                  alt={`${country.name.common}`}
+                />
+                <span>{country.name.common}</span>
+              </div>
+              <IoIosArrowForward />
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>
