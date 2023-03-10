@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import CountriesList from './components/CountriesList';
 import CountryDetails from './components/CountryDetails';
 import Navbar from './components/Navbar';
+import ErrorPage from './views/ErrorPage';
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 
@@ -33,6 +34,7 @@ function App() {
             <CountryDetails 
               countries={countries}/>
           }/>
+        <Route path="*" element={<ErrorPage />}/>  
       </Routes>
     </div>
   );
