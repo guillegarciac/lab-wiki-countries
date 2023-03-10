@@ -18,6 +18,12 @@
   margin-left: 10px;
 }
 
+.country-link {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
 .input-group-text {
   background-color: transparent;
   margin-top: 1rem;
@@ -40,8 +46,10 @@
   margin-left: 1rem;
 }
 
-.list-group {
-  width: 75%;
+.list-group-container {
+  width: 50%;
+  height: 85vh; 
+  overflow-y: scroll;
 }
 
 .list-detail {
@@ -50,5 +58,6 @@
 
 .list-two-containers {
   display: flex;
+  gap: 14%;
 }
 

@@ -9,6 +9,7 @@ import './CountriesList.css';
 export default function CountriesList({ countries }) {
   const [searchValue, setSearchValue] = useState('');
   const [regionFilter, setRegionFilter] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState(null);
 
   const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
@@ -26,9 +27,13 @@ export default function CountriesList({ countries }) {
     setSearchValue('');
   };
 
+  const handleCountrySelect = (country) => {
+    setSelectedCountry(country);
+  };
+
   return (
     <div>
-      <div className="row mb-3">
+      <div className="row mb-3 w-50">
         <div className="col-md-4">
           <select
             className="form-select"
@@ -65,9 +70,13 @@ export default function CountriesList({ countries }) {
         </div>
       </div>
       <div className='list-two-containers'>
-      <div className="list-group">
+      <div className="list-group-container">
         {filteredCountries.map((country) => (
-          <Link className="country-link" to={`/${country.alpha3Code}`}>
+          <Link
+            className="country-link"
+            to={`/${country.alpha3Code}`}
+            onClick={() => handleCountrySelect(country)}
+          >
           <div className="list-group-item" key={country.alpha3Code}>
             <div className="country-item d-flex justify-content-between align-items-center">
               <div className="d-flex align-items-center">
@@ -84,10 +93,13 @@ export default function CountriesList({ countries }) {
         ))}
       </div>
       <div className='list-detail'>
-        <Outlet />
+        {selectedCountry ? (
+          <Outlet />
+        ) : (
+          <p>Please select a country to see more details</p>
+        )}
       </div>
-      </div>
-      
+    </div>  
     </div>
   );
 }
