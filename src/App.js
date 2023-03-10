@@ -16,7 +16,9 @@ function App() {
     const fetchData = async () => {
       const result = await axios('https://ih-countries-api.herokuapp.com/countries');
       setCountries(result.data);
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000); // wait 5 seconds before hiding the loader
     };
     fetchData();
   }, []);
