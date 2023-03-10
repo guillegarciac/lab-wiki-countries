@@ -7,9 +7,11 @@ import './CountriesList.css';
 export default function CountriesList({ countries }) {
   const [searchValue, setSearchValue] = useState('');
 
-  const filteredCountries = countries.filter((country) =>
-    country.name.common.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  const filteredCountries = countries
+    .filter((country) =>
+      country.name.common.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    .sort((a, b) => (a.name.common > b.name.common ? 1 : -1));
 
   const clearSearch = () => {
     setSearchValue('');
