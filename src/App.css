@@ -63,3 +63,12 @@
 .country-link {
   text-decoration: none;
 }
+
+.btn-back {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
