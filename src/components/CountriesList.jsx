@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function CountriesList({countries}) {
+export default function CountriesList({ countries }) {
   return (
     <div className="list-group">
       {countries.map(country => 

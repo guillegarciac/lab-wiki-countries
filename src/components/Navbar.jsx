@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <NavLink className="navbar-brand" to="/">LAB - Wiki Countries</NavLink>
+      <NavLink className="navbar-brand" style={{marginLeft: "10px"}} to="/">LAB - Wiki Countries</NavLink>
     </nav>
   );
 }
