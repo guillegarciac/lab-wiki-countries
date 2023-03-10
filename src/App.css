@@ -44,3 +44,18 @@
   right: 0;
   z-index: 9999;
 }
+
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-text {
+  margin-top: 20px;
+  text-align: center;
+}
