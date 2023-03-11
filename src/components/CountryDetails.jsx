@@ -7,8 +7,9 @@ function CountryDetails({ countries }) {
   const country = countries.find(elem => elem.alpha3Code === countryId);
   
   return (
-    <Container className='mt-5 mb-5'>
-      <Row>
+    <Container className="mt-5 mb-5 country-detail">
+      <div className="sticky-top bg-white" style={{ zIndex: 1 }}>
+    <Row>
         <Col>
           <h1>{country.name.common}</h1>
         </Col>
@@ -20,7 +21,9 @@ function CountryDetails({ countries }) {
           />
         </Col>
       </Row>
-      <Row>
+    </div>
+    <div className='scroll-row'>
+    <Row>
         <Col md={6}>
           <p><strong>Capital:</strong> {country.capital[0]}</p>
           <p><strong>Region:</strong> {country.region}</p>
@@ -53,6 +56,8 @@ function CountryDetails({ countries }) {
           </ListGroup>
         </Col>
       </Row>
+    </div>
+
     </Container>
   );
 }

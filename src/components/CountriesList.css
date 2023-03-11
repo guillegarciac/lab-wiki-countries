@@ -81,7 +81,6 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    overflow-y: scroll;
     height: 50vh;
     margin-top: -15px;
     border-top: 1px solid rgb(21, 116, 211);
@@ -90,7 +89,20 @@
   .select-one {
     margin-top: 40%;
     margin-bottom: 1rem;
-    font-size: 45px;
+    font-size: 35px;
+  }
+
+  .scroll-row {
+    overflow-y: scroll;
+    height: 30vh;
+  }
+
+  .mb-5 {
+    margin-bottom: 2rem!important;
+  }
+
+  .mt-5 {
+    margin-top: 1rem!important;
   }
 
 }
