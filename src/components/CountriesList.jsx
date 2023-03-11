@@ -96,7 +96,7 @@ export default function CountriesList({ countries }) {
         {selectedCountry ? (
           <Outlet />
         ) : (
-          <p>Please select a country to see more details</p>
+          <p className='select-one'>Please select a country to see more details</p>
         )}
       </div>
     </div>  
