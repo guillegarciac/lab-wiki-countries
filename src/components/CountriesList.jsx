@@ -33,7 +33,7 @@ export default function CountriesList({ countries }) {
 
   return (
     <div>
-      <div className="row mb-3 w-50">
+      <div className="row">
         <div className="col-md-4">
           <select
             className="form-select"
